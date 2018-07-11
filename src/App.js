@@ -13,35 +13,55 @@ import UserPage from './components/UserPage/UserPage';
 import InfoPage from './components/InfoPage/InfoPage';
 
 import './styles/main.css';
+import { withStyles } from '@material-ui/core/styles';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+
+
+const styles = {
+  root: {
+
+  }
+}
+
+const theme = createMuiTheme ({
+  constructor() {
+    palette: {
+
+    }
+  }
+});
 
 const App = () => (
-  <div>
-    <Header title="Project Base" />
-    <Router>
-      <Switch>
-        <Redirect exact from="/" to="/home" />
-        <Route
-          path="/home"
-          component={LoginPage}
-        />
-        <Route
-          path="/register"
-          component={RegisterPage}
-        />
-        <Route
-          path="/user"
-          component={UserPage}
-        />
-        <Route
-          path="/info"
-          component={InfoPage}
-        />
-        {/* OTHERWISE (no path!) */}
-        <Route render={() => <h1>404</h1>} />
+  <MuiThemeProvider theme={theme}>
+    <div className={this.props.classes.root}>
+      <Header title="Project Base" />
+      <Router>
+        <Switch>
+          <Redirect exact from="/" to="/home" />
+          <Route
+            path="/home"
+            component={LoginPage}
+          />
+          <Route
+            path="/register"
+            component={RegisterPage}
+          />
+          <Route
+            path="/user"
+            component={UserPage}
+          />
+          <Route
+            path="/info"
+            component={InfoPage}
+          />
+          {/* OTHERWISE (no path!) */}
+          <Route render={() => <h1>404</h1>} />
 
-      </Switch>
-    </Router>
-  </div>
+        </Switch>
+      </Router>
+    </div>
+  </MuiThemeProvider>
+
 );
 
-export default App;
+export default withStyles(styles)(App);
