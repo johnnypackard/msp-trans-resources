@@ -33,7 +33,7 @@ const theme = createMuiTheme ({
 
 const App = () => (
   <MuiThemeProvider theme={theme}>
-    <div className={this.props.classes.root}>
+    <div>
       <Header title="Project Base" />
       <Router>
         <Switch>
