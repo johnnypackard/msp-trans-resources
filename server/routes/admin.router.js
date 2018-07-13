@@ -23,6 +23,19 @@ router.get('/', (req, res) => {
     }
 });
 
+router.get('/user', (req, res) => {
+    console.log('admin /user GET', req.query);
+    const users = req.query.person;
+    console.log('GETting all users', person);
+    let queryText = `SELECT * FROM "person";`;
+    pool.query(queryText).then((result) => {
+        res.send(result.rows);
+    }).catch((error) => {
+        console.log('error getting users', error);
+        res.sendStatus(500);
+    });
+});
+
 /**
  * POST new business
  */
@@ -65,6 +78,24 @@ router.delete(':/id', (req, res) => {
         res.sendStatus(403);
     }
 });
+
+// router.delete(':/user', (req, res) => {
+//     if (req.isAuthenticated()) {
+//         console.log('/admin Delete route');
+//         console.log('is authenticated?', req.isAuthenticated());
+//         console.log('user', req.user);
+//         let queryText = 'DELETE FROM person WHERE id=$1;';
+//         const id = req.params.id;
+//         pool.query(queryText, [id]).then((result) => {
+//             res.sendStatus(200);
+//         }).catch((error) => {
+//             console.log('error in /admin DELETE', error);
+//             res.sendStatus(500);
+//         });
+//     } else {
+//         res.sendStatus(403);
+//     }
+// });
 
 router.put('/:id', (req, res) => {
     if (req.isAuthenticated()) {
