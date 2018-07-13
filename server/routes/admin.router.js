@@ -105,7 +105,7 @@ router.put('/:id', (req, res) => {
         let queryText = 'UPDATE businesses WHERE id=$1;';
 
         pool.query(queryText, 
-            [business.biz_name, business.contact_name, business.address, business.gender, business.race, business.language])
+            [business.biz_name, business.contact_name, business.address, business.gender, business.race, business.language, business.image_url])
         .then((result) => {
             res.sendStatus(200);
         }).catch((error) => {

@@ -11,6 +11,7 @@ import LoginPage from './components/LoginPage/LoginPage';
 import RegisterPage from './components/RegisterPage/RegisterPage';
 import UserPage from './components/UserPage/UserPage';
 import InfoPage from './components/InfoPage/InfoPage';
+import AddPage from './components/AddBusinessPage/AddBusinessPage';
 
 import './styles/main.css';
 import { withStyles } from '@material-ui/core/styles';
@@ -53,6 +54,10 @@ const App = () => (
           <Route
             path="/info"
             component={InfoPage}
+          />
+          <Route
+            path="/add"
+            component={AddPage}
           />
           {/* OTHERWISE (no path!) */}
           <Route render={() => <h1>404</h1>} />

@@ -20,7 +20,8 @@ CREATE TABLE businesses (
 	address VARCHAR (500),
 	gender VARCHAR (100),
 	race VARCHAR (100),
-	language VARCHAR (100)
+	language VARCHAR (100),
+	image_url VARCHAR (2083)
 );
 
 CREATE TABLE reviews (
