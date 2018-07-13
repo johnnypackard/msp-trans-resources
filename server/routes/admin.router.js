@@ -71,7 +71,7 @@ router.put('/:id', (req, res) => {
         console.log('/admin PUT route');
         console.log('is authenticated?', req.isAuthenticated());
         console.log('user', req.user);
-        let queryText = 'UPDATE businesses SET (biz_name, contact_name, address, gender, race, language) WHERE id=$1;';
+        let queryText = 'UPDATE businesses WHERE id=$1;';
 
         pool.query(queryText, 
             [business.biz_name, business.contact_name, business.address, business.gender, business.race, business.language])
