@@ -1,3 +1,6 @@
+Icon provided by:
+By Devin Kira Murphy [CC BY-SA 3.0  (https://creativecommons.org/licenses/by-sa/3.0)], via Wikimedia Commons
+
 # Express/Passport with React
 This version uses React to control the login requests and redirection in coordination with client-side routing.
 
