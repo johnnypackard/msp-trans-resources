@@ -1,5 +1,6 @@
 import PropType from 'prop-types';
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 import {
     Button,
     Container,
